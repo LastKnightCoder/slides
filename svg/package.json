@@ -1,5 +1,4 @@
 {
-  "name": "slides",
   "private": true,
   "scripts": {
     "build": "slidev build",
@@ -10,10 +9,10 @@
     "@slidev/cli": "^0.32.2",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*",
-    "zx": "^6.1.0",
     "element-plus": "^2.0.1"
   },
+  "name": "slidev",
   "devDependencies": {
-    "@iconify-json/el": "^1.1.1"
+    "@iconify-json/el": "^1.0.1"
   }
 }

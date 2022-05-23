@@ -1,6 +1,6 @@
 :root {
   --font: 'Ubuntu', '华文行楷', '楷体';
-  --code-font: 'Fira Code', '华文行楷';
+  --code-font: 'Fira Code', '华文行楷', '楷体';
 }
 
 html {
@@ -8,5 +8,9 @@ html {
 }
 
 pre, code, kbd, samp {
+  font-family: var(--code-font);
+}
+
+.slidev-layout kbd {
   font-family: var(--code-font);
 }
