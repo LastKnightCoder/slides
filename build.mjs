@@ -26,7 +26,7 @@ const __dirname = path.dirname(__filename)
 
   for (let dir of dirs) {
     await $`pwd`
-    await $`npx slidev build ./${dir}/slides.md --base /slides/${dir}/ --out ./slides/flex`
+    await $`npx slidev build ./${dir}/slides.md --base /slides/${dir}/ --out ../slides/flex`
   }
   
 })()
