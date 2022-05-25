@@ -9,7 +9,7 @@
 import { ElTabs, ElTabPane } from 'element-plus'
 const props = defineProps({
   type: {
-    default: 'border-card'
+    default: 'border'
   },
   labels: {
     default: ['Code', 'Preview']

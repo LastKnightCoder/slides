@@ -12,8 +12,5 @@
     "@slidev/theme-seriph": "*",
     "zx": "^6.1.0",
     "element-plus": "^2.0.1"
-  },
-  "devDependencies": {
-    "@iconify-json/el": "^1.1.1"
   }
 }

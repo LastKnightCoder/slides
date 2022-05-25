@@ -1,15 +1,17 @@
 {
+  "name": "canvas",
   "private": true,
   "scripts": {
+    "build": "slidev build",
     "dev": "slidev --open",
-    "build": "slidev build --base /sharing/ -o ./dist/flex",
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "0.32.2",
+    "@slidev/cli": "^0.32.3",
     "@slidev/theme-default": "*",
-    "@slidev/theme-seriph": "*",
-    "playwright-chromium": "^1.13.0"
+    "@slidev/theme-seriph": "*"
   },
-  "name": "sharing"
+  "devDependencies": {
+    "@iconify-json/wi": "^1.1.1"
+  }
 }

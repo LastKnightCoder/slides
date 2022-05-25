@@ -5,12 +5,12 @@ defaults:
 title: SVG 介绍及其应用
 author: 熊滔
 time: 2022-01-24
-background: /cover8.jpg
+background: /cover.jpg
 ---
 
 # SVG 介绍及应用
 
-### 熊滔
+## 熊滔
 
 ---
 layout: chapter

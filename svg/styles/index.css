@@ -1,18 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Serif+SC:wght@400;500;700&display=swap');
 
 :root {
-  font-family: 'Noto Serif SC', 'Merriweather', '楷体';
+  --font: 'Ubuntu', '华文行楷', '华文楷体', '楷体';
+  --code-font: 'Fira Code', 'Source Code Pro', '华文行楷', monospace;
+  font-family: var(--font);
 }
 
 h2 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 10px;
-  /* background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text; */
   color: black;
+}
+
+.cover h2 {
+  font-size: 2em;
+  color: #F8F8F8;
 }
 
 html.dark #slide-content {
@@ -46,13 +49,10 @@ li::marker {
 :not(pre) code {
   font-size: .8em;
   background: transparent;
-  font-weight: bolder;
-  font-family: Consolas, 'Source Code Pro', 'Fira Code';
+  font-weight: bold;
+  font-family: var(--code-font);
   border-radius: 0;
-  background-image: linear-gradient(to right, #c0392b, #8e44ad);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: rgb(140, 164, 181);
   padding-top: 0;
 }
 
@@ -77,4 +77,17 @@ p {
 
 .select-none {
   user-select: auto !important;
+}
+
+div[class*='language-'], pre[class*='language-'] {
+  background-color: #0C1021!important;
+  color: #F8F8F8;
+}
+
+.slidev-code {
+  padding: 1.3em !important;
+}
+
+span.line {
+  margin: 1em 0;
 }
