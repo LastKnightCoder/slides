@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+:root {
+  --font: 'Fira Code', '楷体';
+}
+
+body {
+  font-family: var(--font);
+}
+
+.slidev-layout {
+  padding-right: 12rem;
+}
+
+.slidev-layout, p {
+  line-height: 1.5;
+}
+
+ul, ol {
+  margin: 20px 0;
+}
+
+ul li {
+  font-weight: 500;
+  list-style: disclosure-closed;
+  margin-top: 10px;
+}
+
+.slidev-layout li {
+  margin-left: 2em;
+}
+
+.slidev-layout ol li {
+  margin-left: 2.5em;
+}
+
+/* ul ul li, ol ul li {
+  list-style: circle;
+  margin-top: 5px;
+} */
+
+.select-none {
+  user-select: auto !important;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background-image: linear-gradient(45deg, #19b3c7 0%, #146b8c 25%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* color: black; */
+  font-weight: bolder;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  zoom: 50%;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10;
+}
