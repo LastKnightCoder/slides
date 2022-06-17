@@ -135,7 +135,7 @@ $$ -->
 
 监督学习的网络训练流程：
 
-1. 将含有对应标签的数据 $x$ 输入到模型中，输入数据与模型中的参数经过运算得到一个输出 $\hat{y}$，这个输出 $\hat{y}$ 就是对真实标签 $y$ 的一个预测
+1. 将含有对应标签的数据$x$输入到模型中，输入数据与模型中的参数经过运算得到一个输出$\hat{y}$，这个输出$\hat{y}$就是对真实标签$y$的一个预测
 2. 计算真实标签与预测的标签的一个差距，这个需要通过损失函数来进行计算
 3. 根据损失函数得到损失之后，使用反向传播算法来计算梯度，
 4. 通过优化算法小批量随机梯度下降算法，来更新模型的参数
@@ -159,17 +159,20 @@ background: /cover2.jpg
 
 ## 数据集
 
-<div style="display: flex; flex-wrap: wrap; gap: 20;">
-  <img src="/origin/015.png" style="zoom: 100%; width: 120px;" />
-  <img src="/origin/031.png" style="zoom: 100%; width: 120px;" />
-  <img src="/origin/070.png" style="zoom: 100%; width: 120px;" />
-  <img src="/origin/282.png" style="zoom: 100%; width: 120px;" />
-  <img src="/origin/476.png" style="zoom: 100%; width: 120px;" />
-  <img src="/train/015.png" style="zoom: 100%; width: 120px;" />
-  <img src="/train/031.png" style="zoom: 100%; width: 120px;" />
-  <img src="/train/070.png" style="zoom: 100%; width: 120px;" />
-  <img src="/train/282.png" style="zoom: 100%; width: 120px;" />
-  <img src="/train/476.png" style="zoom: 100%; width: 120px;" />
+<div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10; margin: 10px auto;">
+  <img src="/origin/015.png" style="width: 125px; zoom: 100%;"/>
+  <img src="/origin/031.png" style="width: 125px; zoom: 100%;"/>
+  <img src="/origin/070.png" style="width: 125px; zoom: 100%;"/>
+  <img src="/origin/282.png" style="width: 125px; zoom: 100%;"/>
+  <img src="/origin/476.png" style="width: 125px; zoom: 100%;"/>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10;">
+  <img src="/train/015.png" style="width: 125px; zoom: 100%;" />
+  <img src="/train/031.png" style="width: 125px; zoom: 100%;" />
+  <img src="/train/070.png" style="width: 125px; zoom: 100%;" />
+  <img src="/train/282.png" style="width: 125px; zoom: 100%;" />
+  <img src="/train/476.png" style="width: 125px; zoom: 100%;" />
 </div>
 
 ---
@@ -190,7 +193,27 @@ background: /cover2.jpg
 
 ---
 
-## 网络改进
+## 损失函数
+
+判别器的输出是输入图像是真实图像的概率，这也是一个二分类问题，当输出趋近于0时，表示输入图像时生成图像这一类，当输出趋近于1时，表示输入图像是真实图像这一类，对于分类问题，一般采用一个交叉熵损失函数: 
+
+<!-- $$
+\min\limits_G \max\limits_D L(G,D) = \mathbb{E}_{x\sim p_r(x)}\left[\log D(x)\right] + \mathbb{E}_{x\sim p_z(x)} \left[\log (1 - D(G(x))) \right]
+$$ -->
+
+<img src="/GAN_loss.svg" style="zoom: 120%;">
+
+判别器的作用是要尽可能的区分真实图像与生成图像，对于输入真实图像，输出要趋近于1，即$\log D(x)$趋近于$0$，对于输入生成图像，输出要趋近于$0$，即$\log(1-D(G(x)))$趋近于$0$，也就是说判别器要尽可能使表达式的值最大。
+
+生成器要使得生成图像输入至判别器时，判别器的输出要趋近于$1$，也就是说$\log(1-D(G(x)))$趋近于负无穷，所以生成器要使得表达式的值最小。
+
+存在的问题: 当判别器达到有最优时，损失函数为一个常数，无法衡量两个分布之间的距离，无法得到梯度来训练生成器。
+
+---
+
+## Wasserstein距离
+
+
 
 ---
 
