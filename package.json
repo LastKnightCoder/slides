@@ -11,6 +11,6 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*",
     "zx": "^6.1.0",
-    "element-plus": "^2.0.1"
+    "element-plus": "^2.2.5"
   }
 }
