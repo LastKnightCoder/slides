@@ -84,7 +84,10 @@ background: /cover1.jpg
 
 <MLP>
 
-$$ y = f\left( \sum_{i=1}^{n}x_iw_i + b_i \right) $$
+<!-- $$ y = f\left( \sum_{i=1}^{n}x_iw_i + b_i \right) $$ -->
+
+<img src="/神经元数学模型.svg" style="zoom: 120%;" />
+
 
 </MLP>
 
@@ -105,15 +108,20 @@ $$ y = f\left( \sum_{i=1}^{n}x_iw_i + b_i \right) $$
 
 多层感知机的数学模型：
 
-$$
+<img src="/多层感知机数学模型.svg" style="zoom: 120%;" />
+
+<!-- $$
 y_{i,j} = \sum\limits_{k,l} {w_{i,j,k,l}}{x_{k,l}}  = \sum\limits_{a,b} {v_{i,j,a,b}}{x_{i + a,i + b}}
-$$
+$$ -->
 
 应用平移不变性与局部性，得到卷积神经网络的数学模型：
 
-$$
+<img src="/卷积层数学模型.svg" style="zoom: 120%;" />
+
+
+<!-- $$
 y_{i,j} = \sum \limits_{a =  -\Delta }^\Delta \sum \limits_{b = -\Delta}^\Delta v_{a,b}x_{i + a,j + b}
-$$
+$$ -->
 
 ---
 
