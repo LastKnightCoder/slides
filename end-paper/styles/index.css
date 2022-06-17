@@ -66,3 +66,18 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 10;
 }
+
+table {
+  margin: 2em auto;
+  border: none;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+th {
+  text-align: left;
+  border-bottom: 1px solid black;
+}
+th, td {
+  padding: .5em 0;
+}
