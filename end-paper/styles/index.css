@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
 :root {
-  --font: 'Open Sans', 'Fira Code', '华文行楷', '黑体';
+  --font: 'Ubuntu', '华文行楷', '黑体';
 }
 
 body {
@@ -81,6 +81,6 @@ th {
 .slidev-layout th {
   font-weight: bold;
 }
-th, td {
-  padding: .5em 0;
+.slidev-layout td, .slidev-layout th {
+  padding: .5em;
 }
