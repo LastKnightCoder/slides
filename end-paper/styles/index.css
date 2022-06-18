@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
 :root {
   --font: 'Ubuntu', '华文行楷', '黑体';
 }
@@ -33,14 +34,9 @@ ul li {
   margin-left: 2.5em;
 }
 
-/* ul ul li, ol ul li {
-  list-style: circle;
-  margin-top: 5px;
-} */
-
-.select-none {
+/* .select-none {
   user-select: auto !important;
-}
+} */
 
 h2 {
   font-size: 2rem;
@@ -64,7 +60,7 @@ img {
 .two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10;
+  gap: 10px;
 }
 
 table {
