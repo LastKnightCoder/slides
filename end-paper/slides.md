@@ -159,6 +159,13 @@ background: /cover2.jpg
 
 <DenoiseDataBase />
 
+<!-- 
+采集图像 2300 幅，筛选后剩余 991 幅
+枪：180，刀：180，金属条：400，手机与充电宝等其他：200
+数据集的划分：3:1:1，随机抽取
+数据增广后，数据集扩大为原来四倍
+-->
+
 ---
 
 ## 生成对抗网络
@@ -252,7 +259,7 @@ y_{i,j} &= \gamma \cdot y_{i,j} + \beta
 \end{aligned}
 $$ -->
 
-<a href="/BN.svg" target="_blank">图示</a>
+<a href="/slides/end-paper/BN.svg" target="_blank">图示</a>
 
 ---
 
@@ -262,15 +269,15 @@ $$ -->
 
 为了避免这种情况的发生，我们必须对生成器的输出加以限制，引导生成器生成有效的图像，在训练生成器时为其添加一个内容损失函数，引导生成图像趋于真实图像。
 
-此处选择L1范数作为内容损失函数:
+此处选择 L1 范数作为内容损失函数:
 
-<img src="/内容损失.svg" style="zoom: 90%;">
+<img src="/内容损失.svg" style="zoom: 90%; margin: 2em auto;">
 
 <!-- $$
 L_G = L_{GAN} + \lambda L_{content}
 $$ -->
 
-经过多次实验，$\lambda$取$10^3$效果较好。
+经过多次实验，$\lambda$ 取 $10^3$ 效果较好。
 
 ---
 
@@ -282,20 +289,38 @@ $$ -->
 
 ## 训练方案
 
-GAN生成器和判别器训练是分开的，本文中首先训练判别器，而后训练生成器。
+GAN 生成器和判别器训练是分开的，本文中首先训练判别器，而后训练生成器。
 
 <TrainGAN />
 
 ---
 
-
 ## 实验结果
+
+<DenoiseResult>
+
+<template v-slot:env>
 
 | 参数名称 | 参数大小 | 参数名称 | 参数大小 |
 | -------- | ------- | -------- | ------- |
 | CPU | 24核/80GB | Pytorch 版本 | 1.9.0 |
 | GPU | 1卡/80GB | CUDA 版本 | 11.1 |
 | 操作系统 | Linux/Ubuntu | Python 版本 | 3.8 |
+
+</template>
+
+<template v-slot:results>
+
+| | PSNR(dB) | SSIM |
+| --- | --- | --- |
+|原始GAN | 4.66 | 0.004 |
+| WGAN(无归一化层) | 11.40 | 0.29 |
+| WGAN(无内容损失) | 19.99 | 0.86 |
+| WGAN(应用所有改进) | 24.02 | 0.91 |
+
+</template>
+
+</DenoiseResult>
 
 ---
 layout: cover
@@ -308,17 +333,54 @@ background: /cover3.jpg
 
 ## 数据集
 
+<DetectDatabase />
+
 ---
 
 ## YOLO 算法
 
----
-
-## 网络及算法改进
+<img src="/YOLO算法.jpg" style="zoom: 100%;" />
 
 ---
 
-## 实验
+## 损失函数
+
+<img src="yolo_loss.svg" style="zoom: 90%; margin: 3em;" />
+
+---
+
+## 使用锚框
+
+有多个目标位于同一个网格单元中，至少有一个目标会被遗漏，借鉴 Faster-RCNN，使用锚框:
+
+- 锚框就是先验框，锚框的中心位于网格单元的左上角，根据目标选择不同宽高比的锚框
+- 计算每个锚框与真实标注的边界框的交并比，选择最大交并比，大于阈值，锚框就负责预测这个目标
+- 每一个锚框都要负责预测类别
+
+网络输出: 坐标 $(t_x, t_y)$、宽高 $t_w,t_h$、置信度 $t_o$
+
+<img src="/anchor-eq.svg" style="zoom: 100%;" />
+
+---
+
+## 多尺度融合
+
+<img src="/多尺度融合.svg" style="zoom: 50%; margin: 5em auto;" />
+
+---
+
+## IOU 损失函数
+
+<img src="/IOU.svg" style="zoom: 45%; margin: 2em 0 0 2em" />
+
+<div style="display: grid; grid-template-columns: 1fr 2fr; align-items: center;">
+  <img src="/DIOU-eq.svg" style="zoom: 90%;">
+  <img src="/DIOU.svg" style="zoom: 50%;">
+</div>
+
+---
+
+## 实验结果
 
 ---
 
