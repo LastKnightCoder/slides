@@ -345,7 +345,7 @@ background: /cover3.jpg
 
 ## 损失函数
 
-<img src="yolo_loss.svg" style="zoom: 90%; margin: 3em;" />
+<img src="/yolo_loss.svg" style="zoom: 90%; margin: 3em;" />
 
 ---
 
