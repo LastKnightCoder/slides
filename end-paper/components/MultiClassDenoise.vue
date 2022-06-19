@@ -1,7 +1,7 @@
 <template>
   <el-tabs type="card" style="margin-top: 1rem;">
     <el-tab-pane label="混淆矩阵">
-      <img src="/cm2.png" style="zoom: 50%; margin: 1em;" />
+      <img src="/cm2.png" style="zoom: 18%; margin: 1em;" />
     </el-tab-pane>
     <el-tab-pane label="训练数据">
       <slot name="denoise-results"></slot>
