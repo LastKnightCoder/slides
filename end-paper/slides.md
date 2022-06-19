@@ -419,9 +419,9 @@ mAP: 不同召回率下的平均精度(mean Average Precision)。
 
 ---
 
-## 多类检测
+## 多类带噪检测
 
-<MultiClassResult>
+<MultiClassNoise>
 
 <template v-slot:noise-results>
 
@@ -437,6 +437,14 @@ mAP: 不同召回率下的平均精度(mean Average Precision)。
 
 </template>
 
+</MultiClassNoise>
+
+---
+
+## 多类去噪检测
+
+<MultiClassDenoise>
+
 <template v-slot:denoise-results>
 
 | 类别 | 精度(p) | 召回率\(r) | mAP@.5 | mAP@.5:0.95 |
@@ -451,7 +459,7 @@ mAP: 不同召回率下的平均精度(mean Average Precision)。
 
 </template>
 
-</MultiClassResult>
+</MultiClassDenoise>
 
 ---
 
